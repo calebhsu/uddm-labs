@@ -317,8 +317,7 @@ footer nav[role="navigation"] a {
     color: #999
 }
 
-@media all and (min-width: 37.5em) {  /* 600px */       
-             
+@media all and (min-width: 33.5em) {     
   .slats li {
       float: left;
       margin-right: 2.5316456%; /* 24px / 948px */
@@ -329,7 +328,7 @@ footer nav[role="navigation"] a {
   }
 }
 
-@media all and (min-width: 50em) { /* 800px */
+@media all and (min-width: 40em) {
 
   nav[role="navigation"] li {
       float: left;
@@ -350,7 +349,7 @@ footer nav[role="navigation"] a {
   }
 }
 
-@media all and (min-width: 65.625em) { /* 1050px */
+@media all and (min-width: 54.625em) {
   .main {
     float: left;
     width: 65.8227%;
@@ -366,7 +365,7 @@ footer nav[role="navigation"] a {
   }
 }
 
-@media all and (min-width: 78.75em) {
+@media all and (min-width: 66.75em) {
   .main section {
     -moz-column-count: 2;
     -webkit-column-count: 2;
