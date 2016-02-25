@@ -329,7 +329,6 @@ footer nav[role="navigation"] a {
 }
 
 @media all and (min-width: 40em) {
-
   nav[role="navigation"] li {
       float: left;
   }
@@ -377,9 +376,9 @@ footer nav[role="navigation"] a {
     -webkit-column-rule: 1px dotted #ccc;
     column-rule: 1px dotted #ccc;
   }
-  .main section img {
+  .main img {
     border: 3px solid #dbdbdb;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
   .main .articleInfo {
     border-bottom: 3px solid #dbdbdb;
