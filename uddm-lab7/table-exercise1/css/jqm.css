@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* jqm docs css
+
+Beware: lots of last-minute CSS going on in here 
+cobblers, shoes, 
+*/
+
+body { background: #f9f9f9; padding:13px; }
+body.ui-mobile-viewport { padding: 0; }
+body, input, textarea, select, button { font-family: Helvetica, Arial, san-serif; }
+
+
+h2 { margin:1.2em 0 .4em 0; }
+strong { font-weight: bold; }
+
+img { max-width: 100%; }
+
+
+
+.type-interior .content-secondary {
+	border-right: 0;
+	border-left: 0;
+	margin: 10px -15px 0;
+	background: #fff;
+	border-top: 1px solid #ccc;
+}
+
+.type-interior .ui-content {
+	padding-bottom: 0;
+}
+.content-secondary .ui-collapsible {
+	padding: 10px 15px;
+}
+
+	.content-secondary {
+		text-align: left;
+		float: left;
+		width: 45%;
+	}
+	.content-secondary,
+	.type-interior .content-secondary {
+		margin: 30px 0 20px 2%;
+		padding: 20px 4% 0 0;
+		background: none;
+		border-top: none;
+		position: relative;
+	}
+	
+	.content-primary {
+		width: 65%;
+		float: left;
+		margin-top: 30px;
+		margin-left: 5%;
+		margin-right: 1%;
+		padding-right: 1%;
+		padding-left: 3%;
+		position:relative;
+		left: 3em;
+	}
+	.content-primary ul:first-child {
+		margin-top: 0;
+	}
+	/* collapsible non-inset example */
+	.content-primary .ui-collapsible-content ul:first-child {
+		margin-top: -10px;
+	}
+	.content-secondary h2 {
+		position: absolute;
+		left: -9999px;
+	}
+	.type-interior .content-primary {
+		padding: 1.5em 6% 3em 0;
+		margin: 0;
+	}
+	
+	.footer-docs {
+		padding: 5px 0;
+		clear:both;
+		color:#666;
+	}
