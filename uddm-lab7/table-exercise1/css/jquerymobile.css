@@ -16,6 +16,7 @@ table {
     max-width:100%;
 }
 
+/* Increase line height, left-align all data cells */
 th, td {
   line-height: 1.5em;
   text-align: left;
@@ -23,6 +24,25 @@ th, td {
   vertical-align: top;
 }
 
+/* Adds row highlight on hover */
+tr:hover, a:focus {
+  background-color: #ffff99;
+}
+
+/* Add border to bottom of header row */
+thead th {
+ border-bottom: 1px solid #371B2C;  /* non-RGBA fallback */
+ border-bottom: 1px solid rgba(55, 27, 44, .1); 
+}
+
+/* Add stroke to the header and last item */
+thead th,
+tbody tr:last-child {
+ border-bottom: 1px solid #d6d6d6;  /* non-RGBA fallback  */
+ border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+/* Add border to bottom of each table row */
 tbody th,
 tbody td {
  border-bottom: 1px solid #371B2C;  /* non-RGBA fallback */
@@ -34,11 +54,6 @@ tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
  background-color: #eeeeee;   /* non-RGBA fallback  */
  background-color: rgba(0,0,0,0.04); 
-}
-
-thead th {
- border-bottom: 1px solid #371B2C;  /* non-RGBA fallback */
- border-bottom: 1px solid rgba(55, 27, 44, .1); 
 }
 
 caption {
