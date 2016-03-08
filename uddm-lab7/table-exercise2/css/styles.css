@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+* 
+*
+* Copyright 2010, 2013 jQuery Foundation, Inc.  and other contributors
+* Released under the MIT license.
+* http://jquery.org/license
+*
+*/
+
+/* ------------------------------------------------------------------------------------------------*/
+
+table {
+    max-width:100%;
+}
+
+/* Increase line height, left-align all data cells */
+#th1, #th2, #th3, #th4, #th5, #th5, #th6, #th7, #th8 {
+  background-color: #4CAF50;
+  color: white;
+}
+
+th, td {
+  border: 1px solid white;
+  line-height: 1.5em;
+  text-align: left;
+  padding: .4em 1.5em;
+  vertical-align: top;
+}
+
+/* Adds row highlight on hover */
+tr:hover, a:focus {
+  background-color: #ADD8E6;
+}
+
+/* Add border to bottom of header row */
+thead th {
+ border-bottom: 1px solid #371B2C;  /* non-RGBA fallback */
+ border-bottom: 1px solid rgba(55, 27, 44, .1); 
+}
+
+/* Add stroke to the header and last item */
+thead th,
+tbody tr:last-child {
+ border-bottom: 1px solid #d6d6d6;  /* non-RGBA fallback  */
+ border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+/* Add border to bottom of each table row */
+tbody th,
+tbody td {
+ border-bottom: 1px solid #371B2C;  /* non-RGBA fallback */
+ border-bottom: 1px solid rgba(55, 27, 44, .5); 
+}
+
+/* Add alternating row stripes */
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+ background-color: #eeeeee;   /* non-RGBA fallback  */
+ background-color: rgba(0,0,0,0.04); 
+}
+
+caption {
+  text-align:left;
+  margin-bottom:1.4em;
+  opacity: .5;
+}
