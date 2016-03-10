@@ -1,119 +1,106 @@
 <!DOCTYPE html>
 <!-- HTML 5 -->
 <html lang="en">
-     <head>
+ <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <title>Alert Dialog</title>
+    
+    <style type="text/css">
+      #b { 
+         background: #ECE9D8; 
+         color: #000000; 
+         padding: 1em; 
+         border:3px inset black;
+         width: 25em;
+         height:11em;
+      }
 
-          <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+      #a {
+           position: fixed;
+           top:50px;
+           left:110px;
+      }
+  
+      #StayButton {
+           display:block;
+           margin:7px;
+           padding:2px;
+           border:2px outset white;
+           float:left;
+           font-size:medium;
+      }
 
-          <title>Alert Dialog</title>
-          
+      #GoogleLink {
+           display:block;
+           margin:7px;
+           padding:2px;
+           border:2px outset white;
+           float:left; 
+           text-decoration: none;
+           font-size:medium; 
+      }
 
-          <style type="text/css">
+    </style>
 
-              #b { 
-                   background: #ECE9D8; 
-                   color: #000000; 
-                   padding: 1em; 
-                   border:3px inset black;
-                   width: 25em;
-                   height:11em;
+
+    <script type="text/javascript">
+
+      function show() {
+          disableButtons();
+          window.myparent.appendChild(window.myobj);   
+      }
+
+      function hide() {
+          enableButtons();
+          window.myparent = document.getElementById("a");
+          window.myobj = document.getElementById("b");
+          window.myparent.removeChild(window.myobj);   
+
+          // adds focus to dialog option
+          document.getElementById("ShowButton").focus();
+      }
+
+      function disableButtons() {
+          var myB = document.getElementsByTagName("button");
+          for (var i=0; i<myB.length; i++) {
+              if (myB[i].id != 'CloseLink') {
+                  myB[i].disabled="disabled";    
               }
+          }
+          document.body.style.backgroundColor='#808080';
+      }
 
-              #a {
-                   position: fixed;
-                   top:50px;
-                   left:110px;
-              }
-          
-              #StayButton {
-                   display:block;
-                   margin:7px;
-                   padding:2px;
-                   border:2px outset white;
-                   float:left;
-                   font-size:medium;
-              }
+      function enableButtons() {
+          var myB = document.getElementsByTagName("button");
+          for (var i=0; i<myB.length; i++) {
+              myB[i].disabled="";
+          }
+          document.body.style.backgroundColor='#FFFFFF';
+      }
 
-              #GoogleLink {
-                   display:block;
-                   margin:7px;
-                   padding:2px;
-                   border:2px outset white;
-                   float:left; 
-                   text-decoration: none;
-                   font-size:medium; 
-              }
-
-          </style>
+    </script>
+ </head>
 
 
-          <script type="text/javascript">
+ <body onload="hide();">
 
-              function show() {
-                  disableButtons();
-                  window.myparent.appendChild(window.myobj);
+  <h1>ARIA Alertdialogs!</h1>
 
-                 
-              }
+  <button onclick="show();" id="ShowButton">
+      Show Alert Dialog.
+  </button> 
 
-              function hide() {
-                  enableButtons();
-                  window.myparent = document.getElementById("a");
-                  window.myobj = document.getElementById("b");
-                  window.myparent.removeChild(window.myobj);
+  <div id="a">
+    <div id="b" role="alert" aria-labelledby="mymessage">          
+      <h2 id="mymessage">Do you want to stay on this page or do you want to visit Google?</h2>
+        <button onclick="hide();" id="StayButton">Stay on this Page</button> 
+      <a href="http://www.google.com" id="GoogleLink" role="button">Go to Google</a> 
+    </div>
+  </div>
 
-                  
-              }
+  <h2>Additional Content</h2>
+  <p>There might be additional content on a page like this including <button>additional buttons</button>.</p>
 
-
-              function disableButtons() {
-                  var myB = document.getElementsByTagName("button");
-                  for (var i=0; i<myB.length; i++) {
-                      if (myB[i].id != 'CloseLink') {
-                          myB[i].disabled="disabled";
-                          
-                      }
-                  }
-                  document.body.style.backgroundColor='#FFFFFF';
-              }
-
-              function enableButtons() {
-                  var myB = document.getElementsByTagName("button");
-                  for (var i=0; i<myB.length; i++) {
-                      myB[i].disabled="";
-                      
-                  }
-                  document.body.style.backgroundColor='#FFFFFF';
-              }
-
-          </script>
-
-     </head>
-
-
-     <body onload="hide();">
-
-          <h1>ARIA Alertdialogs!</h1>
-
-              <button onclick="show();" id="ShowButton">
-                  Show Alert Dialog.
-              </button> 
-
-
-              <div id="a">
-                  <div id="b">
-                      
- 	                    <h2>Do you want to stay on this page or do you want to visit Google?</h2>
-                          <button onclick="hide();" id="StayButton">Stay on this Page</button> 
-       	              <a href="http://www.google.com" id="GoogleLink">Go to Google</a> 
-
-                  </div>
-              </div>
-
-              <h2>Additional Content</h2>
-              <p>There might be additional content on a page like this including <button>additional buttons</button>.</p>
-
-     </body>
-
+ </body>
 
 </html>

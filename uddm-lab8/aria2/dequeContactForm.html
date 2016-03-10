@@ -7,6 +7,7 @@
  body {
  	font-family: Arial, Helvetica, sans-serif;
  	font-size:1.2em;
+  padding: 0.5em 2em;
  }
  .star {
  	color:#b30000;
@@ -29,6 +30,19 @@
  	margin-bottom:-1.2em;
  }
  
+ .hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+ }
+
+ #pwinst {
+  display: block;
+  font-style: italic;
+ }
  /*
  
  /* save for later
@@ -50,42 +64,44 @@
  <form name="form1" method="post" action="">
    <p>
      <label for="fname">First Name <span class="star">*</span></label>
-     <input type="text" name="fname" id="fname">
+     <input required aria-required="true" type="text" name="fname" id="fname">
    </p>
    <p>
-     <label for="lname">Last Name </label>
-     <input type="text" name="lname" id="lname">
+     <label for="lname">Last Name <span class="star">*</span> </label>
+     <input required aria-required="true" type="text" name="lname" id="lname">
    </p>
    <p>
-     <label for="email">Email </label>
-     <input type="email" name="email" id="email">
+     <label for="email">Email <span class="star">*</span> </label>
+     <input required aria-required="true" type="email" name="email" id="email">
    </p>
-   <p class="instructions-container">
+   <p>
    <!-- how can we move the password instructions out of the label? --> 
-     <label for="password">Password <span class="star">*</span> <span class="instructions">Use 6-20 characters, at least 1 uppercase letter and 1 number.</span></label>
-     <input required type="password" name="password" id="password">
+     <label for="password">Password <span class="star">*</span> 
+     <span id="pwinst">Use 6-20 characters, at least 1 uppercase letter and 1 number.</span>
+     </label>
+     <input required aria-required="true" type="password" name="password" id="password" aria-describedby="pwinst">
    </p>
    <!-- how can we move the date format instructions out of the label? --> 
    <p class="instructions-container">
      <label for="bday">Birthday <span class="star">*</span> <span class="instructions">MM/DD/YYYY</span></label>
-     <input type="date" name="bday" id="bday">
+     <input required aria-required="true" type="date" name="bday" id="bday">
    </p>
    <fieldset class="inline">
      <legend>Gender <span class="star">*</span></legend>
-     <input type="radio" name="gender" value="male" id="male">
+     <input required aria-required="true" type="radio" name="gender" value="male" id="male">
      <label for="male" class="inline">Male</label>
-     <input type="radio" name="gender" value="female" id="female">
+     <input required aria-required="true" type="radio" name="gender" value="female" id="female">
      <label for="female" class="inline">Female</label>
    </fieldset>
    <p>
      <label for="areacode">Phone <span class="star">*</span> <span class="hidden">Area Code</span></label>
-     <input type="tel" name="areacode" id="areacode" maxlength="3">
+     <input required aria-required="true" type="tel" name="areacode" id="areacode" maxlength="3">
      -
      <label for="threedigits" class="inline"> <span class="hidden">First Three Phone Digits</span> <span class="star">*</span></label>
-     <input required type="tel" name="threedigits" id="threedigits" maxlength="3">
+     <input required aria-required="true" type="tel" name="threedigits" id="threedigits" maxlength="3">
      -
      <label for="fourdigits" class="inline"> <span class="hidden">Last Four Phone Digits</span> <span class="star">*</span></label>
-     <input required type="tel" name="fourdigits" id="fourdigits" maxlength="4">
+     <input required aria-required="true" type="tel" name="fourdigits" id="fourdigits" maxlength="4">
    </p>
    <p>
      <label for="location">Location <span class="star">*
@@ -343,7 +359,7 @@
      <input type="number" pattern="[0-9]*" maxlength="5" min="0" name="zip" id="zip">
    </p>
    <p>
-     <input required type="checkbox" name="tos" id="tos">
+     <input required aria-required="true"  type="checkbox" name="tos" id="tos">
      <label for="tos" class="inline"><span class="star">*</span> I agree to terms of service.</label>
    </p>
    <p>

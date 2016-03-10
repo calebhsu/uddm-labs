@@ -14,86 +14,90 @@
          var timer_started = false;  // Used for grader and class manager message
 
          
-         function startTimer() {
+        function startTimer() {
 
-             timer_started = true;  
-	       var today = new Date();
-	       start_time = today.getHours() * 3600 +
-		 today.getMinutes() * 60 + today.getSeconds();
+          timer_started = true;  
+          var today = new Date();
+          start_time = today.getHours() * 3600 +
+          today.getMinutes() * 60 + today.getSeconds();
 
-             // st add calculate timeout target value
-             timeouttarget = 20;
+          // st add calculate timeout target value
+          timeouttarget = 20;
 
-	       // calculate timeout value
-	       timeout = 40;
+           // calculate timeout value
+           timeout = 40;
 
-	       this.setTimeout('checkTimer()', speed);
-         }
+           this.setTimeout('checkTimer()', speed);
+        }
 
-         function checkTimer() {
+        function checkTimer() {
 
-	       var form = document.timerform;
+          var form = document.timerform;
 
-	       if (form != null) {		// is null in OG results page	
-		     var today = new Date();
-		     curr_time = today.getHours() * 3600 +
-		     today.getMinutes() * 60 + today.getSeconds();
-	           var time_diff = curr_time - start_time;
-	
-		 if (time_diff > timeouttarget) {
-			//document.getElementById('timerRecomTime').setAttribute('display','block');
-		 }
-	   
-	       if (time_diff > timeout) {
-		      //document.getElementById('timerMaxTime').setAttribute('display','block');
-		 }
-	   
-		 // calculate timer string
-		 var timer_sec = time_diff % 60;
-		 time_diff = (time_diff - timer_sec) / 60;
-		 var timer_min = time_diff % 60;
-		 var timer_hour = (time_diff - timer_min) / 60;
-	
-		 var timer_str;
-		 if(timer_hour < 10) {
-			timer_str = '0';
-		 }
-		 timer_str += timer_hour + ':';
-	
-		 if(timer_min < 10) {
-			timer_str += '0';
-		 }
+          if (form != null) {    // is null in OG results page 
+            var today = new Date();
+            curr_time = today.getHours() * 3600 +
+            today.getMinutes() * 60 + today.getSeconds();
+            var time_diff = curr_time - start_time;
 
-    		 timer_str += timer_min + ':';
-	
-		 if(timer_sec < 10) {
-			timer_str += '0';
-		 }
+            if (time_diff > timeouttarget) {
+            //document.getElementById('timerRecomTime').setAttribute('display','block');
+            }
 
-   		 timer_str += timer_sec;
-	
-		 form.show_timer.value = timer_str;
-	
-		 var quiz_timer_str;
-		 if (timer_hour == 1) {
-			quiz_timer_str = '1 hour, ';
-		 } else if(timer_hour > 1) {
-			quiz_timer_str = timer_hour + ' hours, ';
-		 } else {
-			quiz_timer_str = '';
-	       }
+            if (time_diff > timeout) {
+            //document.getElementById('timerMaxTime').setAttribute('display','block');
+            }
 
-  	       if(timer_min == 0 && timer_hour == 0) {
-			quiz_timer_str = 'Less than 1 minute';
-		 } else if(timer_min == 1) {
-			quiz_timer_str += '1 minute';
-		 } else {
-			quiz_timer_str += timer_min + ' minutes';
-	       }
+            // calculate timer string
+            var timer_sec = time_diff % 60;
+            time_diff = (time_diff - timer_sec) / 60;
+            var timer_min = time_diff % 60;
+            var timer_hour = (time_diff - timer_min) / 60;
 
-		 this.setTimeout('checkTimer()', speed);
-	}
-}
+            var timer_str;
+            if(timer_hour < 10) {
+              timer_str = '0';
+            }
+
+            timer_str += timer_hour + ':';
+
+            if(timer_min < 10) {
+              timer_str += '0';
+            }
+
+            timer_str += timer_min + ':';
+
+            if(timer_sec < 10) {
+              timer_str += '0';
+            }
+
+            timer_str += timer_sec;
+
+            form.show_timer.value = timer_str;
+
+            var quiz_timer_str;
+            if (timer_hour == 1) {
+              quiz_timer_str = '1 hour, ';
+            } 
+            else if (timer_hour > 1) {
+              quiz_timer_str = timer_hour + ' hours, ';
+            } 
+            else {
+              quiz_timer_str = '';
+            }
+
+            if(timer_min == 0 && timer_hour == 0) {
+              quiz_timer_str = 'Less than 1 minute';
+            } 
+            else if(timer_min == 1) {
+              quiz_timer_str += '1 minute';
+            } 
+            else {
+              quiz_timer_str += timer_min + ' minutes';
+            }
+            this.setTimeout('checkTimer()', speed);
+          }
+        }
 
     </script>
 </head>
