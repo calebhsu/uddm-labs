@@ -3,3 +3,9 @@
 *.[pP][nN][gG]
 
 uddm-lab6/images
+
+# Fonts
+*.eot
+*.svg
+*.ttf
+*.woff
